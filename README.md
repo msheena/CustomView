@@ -1,15 +1,12 @@
-# CustomView
- ···<declare-styleable name="IconRatingBar">
-        <attr name="starSize" format="dimension"/>
-        <attr name="starCount" format="integer"/>
-        <attr name="starSpace" format="integer"/>
-        <attr name="starEmptyColor" format="reference|color"/>
-        <attr name="starFullColor" format="reference|color"/>
-        <attr name="starIcon" format="reference|string"/>
-    </declare-styleable>
-    ···
-属性如上，支持自定义星星大小，星星个数，星星间距，未选中颜色，选中颜色使用及使用的icon
+# 属性
+starSize：星星大小
+starCount：星星个数
+starSpace：星星间距
+starEmptyColor：未选中颜色
+starFullColor：选中颜色
+starIcon：星星样式（注：iconfont）
 # 使用方法
+```
  <com.sheena.idesigin.component.IconRatingBar
        android:id="@+id/ratingbar"
        android:layout_width="wrap_content"
@@ -21,4 +18,4 @@
        app:starSpace="6"
        app:starIcon="@string/full_star_icon"
        />
-        
+   ```     
