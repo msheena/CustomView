@@ -29,6 +29,7 @@ public class IconRatingBar extends LinearLayout {
     private int mStarSpace;//星星间距
     private int mStarEmptyColor;//空星星颜色；
     private int mStarFullColor;//实星星颜色
+    private String mStarIcon;//星星样式
     private boolean mClickable = true;
     private OnRatingBarChangeListener onRatingBarChangeListener;
     private Object bindObject;
@@ -53,6 +54,7 @@ public class IconRatingBar extends LinearLayout {
         mStarSpace = a.getInt(R.styleable.IconRatingBar_starSpace, 6);
         mStarEmptyColor = a.getColor(R.styleable.IconRatingBar_starEmptyColor, Color.WHITE);
         mStarFullColor=a.getColor(R.styleable.IconRatingBar_starFullColor,Color.YELLOW);
+        mStarIcon=a.getString(R.styleable.IconRatingBar_starIcon);
         a.recycle();
 
 
@@ -94,11 +96,12 @@ public class IconRatingBar extends LinearLayout {
     }
     private IconTextView getStarIcon(Context context, AttributeSet attrs,int starSpace) {
         IconTextView iconTextView=new IconTextView(context);
-        iconTextView.setText(context.getString(R.string.star_icon));
+        if (TextUtils.isEmpty(mStarIcon)){
+            iconTextView.setText("&#xe613;");
+        }else {
+            iconTextView.setText(mStarIcon);
+        }
         iconTextView.setTextSize(mStarSize);
-//        ViewGroup.LayoutParams para = new ViewGroup.LayoutParams(Math.round(mStarSize), Math.round(mStarSize));
-//        iconTextView.setLayoutParams(para);
-        // TODO:you can change gap between two stars use the padding
         iconTextView.setPadding(0,0, DisplayUtil.dip2px(starSpace),0);
         return iconTextView;
     }
