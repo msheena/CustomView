@@ -102,7 +102,7 @@ public class IconRatingBar extends LinearLayout {
             iconTextView.setText(mStarIcon);
         }
         iconTextView.setTextSize(mStarSize);
-        iconTextView.setPadding(0,0, DisplayUtil.dip2px(starSpace),0);
+        iconTextView.setPadding(0,0,dp2pixel(starSpace),0);
         return iconTextView;
     }
 
@@ -139,5 +139,9 @@ public class IconRatingBar extends LinearLayout {
         this.onRatingBarChangeListener = onRatingBarChangeListener;
     }
 
+
+    public int dp2pixel(int i) {
+        return (int) (0.5F + MainApplication.getInstance().getResources().getDisplayMetrics().density * (float) i);
+    }
 
 }
