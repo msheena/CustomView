@@ -10,7 +10,7 @@
     ···
 属性如上，支持自定义星星大小，星星个数，星星间距，未选中颜色，选中颜色使用及使用的icon
 # 使用方法
-···<com.sheena.idesigin.component.IconRatingBar
+ <com.sheena.idesigin.component.IconRatingBar
        android:id="@+id/ratingbar"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -21,4 +21,4 @@
        app:starSpace="6"
        app:starIcon="@string/full_star_icon"
        />
-       ···
+        
