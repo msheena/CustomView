@@ -24,6 +24,7 @@ import com.sheena.idesigin.util.Util;
  */
 
 public class IconRatingBar extends LinearLayout {
+    private Context mContext;
     private int mStarCount;//星星个数
     private float mStarSize=16;//星星大小
     private int mStarSpace;//星星间距
@@ -47,6 +48,7 @@ public class IconRatingBar extends LinearLayout {
 
     public IconRatingBar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        mContext=context;
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.IconRatingBar, defStyleAttr, defStyleRes);
         mStarCount = a.getInt(R.styleable.IconRatingBar_starCount, 5);
@@ -140,8 +142,9 @@ public class IconRatingBar extends LinearLayout {
     }
 
 
-    public int dp2pixel(int i) {
-        return (int) (0.5F + MainApplication.getInstance().getResources().getDisplayMetrics().density * (float) i);
+   public int dp2pixel(int i) {
+        return (int) (0.5F + mContext.getResources().getDisplayMetrics().density * (float) i);
     }
+
 
 }
